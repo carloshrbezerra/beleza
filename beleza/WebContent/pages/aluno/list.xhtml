@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+        <title>Cadastro de Aluno</title>
+        <link type="text/css" rel="stylesheet" href="dot-luv/skin.css" />
+</h:head>
+<h:body>
+
+	
+	
+	
+	<h:form id="formPrincipal">
+ 						 <p:commandButton value="Cadastrar" id="cadastrar" action="${alunoController.prepareAdd()}" ajax="false"/>
+ 
+                        <p:dataTable var="aluno" value="#{alunoController.list()}"
+                                id="tabelaAlunos" style="width:70%">
+                                <f:facet name="header">Lista de Pessoas Cadastradas</f:facet>
+ 
+                                <p:column headerText="Matricula">
+ 
+                                        <h:outputText value="${aluno.matricula}" />
+                                </p:column>
+                                <p:column headerText="Nome">
+ 
+                                        <h:outputText value="#{aluno.nome}" />
+                                </p:column>
+                                <p:column headerText="E-mail">
+                                        <h:outputText value="#{aluno.email}" />
+                                </p:column>
+                                <p:column headerText="Ações">
+                                        <p:commandButton value="Editar" id="editar" />
+                                        <p:commandButton value="Deletar" id="deletar" />
+                                </p:column>
+ 
+                        </p:dataTable>
+ 
+                       
+                </h:form>
+    
+   
+
+</h:body>
+</html>

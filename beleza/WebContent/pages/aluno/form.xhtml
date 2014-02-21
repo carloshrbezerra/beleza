@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+        <title>Cadastro de Aluno</title>
+        <link type="text/css" rel="stylesheet" href="dot-luv/skin.css" />
+</h:head>
+<h:body>
+
+	
+	<p:layoutUnit position="center">
+	
+	<h:form id="form">
+			
+		<p:panel>
+            <h:panelGrid columns="2">
+                <h:outputText value="Matricula: " />
+                <p:inputText value="${alunoController.aluno.matricula}"/>
+ 
+                <h:outputText value="Nome:" />
+                <p:inputText value="${alunoController.aluno.nome}" />
+
+ 				<h:outputText value="Email: " />
+                <p:inputText value="${alunoController.aluno.email}" />
+ 
+                <p:commandButton value="Salvar" action="${alunoController.add()}" />
+            
+                <p:commandButton value="Limpar" onclick="form.reset()" />
+            </h:panelGrid>
+        </p:panel>
+	</h:form>
+    
+    
+    </p:layoutUnit>
+
+</h:body>
+</html>
